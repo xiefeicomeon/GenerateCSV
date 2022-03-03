@@ -33,7 +33,7 @@ def generateCSV(Originsheet_path,  Output_path):
     # 保存主站遥控表
     YK_path = Dir_name / 'csv_digctl.csv'
     Origin_sheet_yk.to_csv(YK_path, encoding="gbk", index=None)
-
+    print('%s生成CSV文件成功' %Station.group())
 
 # 当前项目路径
 Current_path = Path.cwd()
