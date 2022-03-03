@@ -38,10 +38,8 @@ def generateCSV(Originsheet_path,  Output_path):
 # 当前项目路径
 Current_path = Path.cwd()
 
-# 当前站主点表名称
-Station_names = ['常规站灰锅口主站点表20220225.xlsx']
-for Station_name in Station_names:
-    # 原始主站点表文件路径
-    Originsheet_path = Current_path / '主站点表' / Station_name
+# 原始主站点表文件路径
+Originsheet_dir = Current_path / '主站点表'
+for Originsheet_path in Originsheet_dir.rglob('*.xl*'):
     # 调用生成函数
     generateCSV(Originsheet_path,  Current_path)
