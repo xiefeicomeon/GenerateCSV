@@ -33,6 +33,13 @@ def generateCSV(Originsheet_path,  Output_path):
     # 保存主站遥控表
     YK_path = Dir_name / 'csv_digctl.csv'
     Origin_sheet_yk.to_csv(YK_path, encoding="gbk", index=None)
+
+     # 读取主站遥调表
+    Origin_sheet_yt = pd.read_excel(Originsheet_path, "遥调")
+
+    # 保存主站遥调表
+    YT_path = Dir_name / 'csv_anactl.csv'
+    Origin_sheet_yt.to_csv(YT_path, encoding="gbk", index=None)
     print('%s生成CSV文件成功' %Station.group())
 
 # 当前项目路径
